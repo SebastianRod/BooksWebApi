@@ -1,0 +1,14 @@
+services:
+  mongoApiDb:
+    image: mongodb/mongodb-community-server:6.0-ubi8
+    container_name: MongoDbApiProj
+    ports:
+      - "27018:27017"
+    volumes:
+      - ./data:/data/db:rw
+      - ./db_users.js:/docker-entrypoint-initdb.d/db_users.js:ro
+    restart: always
+    environment:
+      MONGODB_INITDB_ROOT_USERNAME: root
+      MONGODB_INITDB_ROOT_PASSWORD: root_pw
+      MONGODB_INITDB_DATABASE: webApiDb

@@ -1,0 +1,4 @@
+# Ignore the 'data' folder inside the 'db' directory
+db/data/
+
+bin
